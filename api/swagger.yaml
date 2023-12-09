@@ -1,0 +1,143 @@
+definitions:
+  helpers.LoginRequest:
+    properties:
+      password:
+        type: string
+      user_name:
+        type: string
+    required:
+    - password
+    - user_name
+    type: object
+  helpers.ResetPasswordPlatload:
+    properties:
+      new_password:
+        type: string
+      password:
+        type: string
+      user_name:
+        type: string
+    required:
+    - new_password
+    - password
+    - user_name
+    type: object
+  helpers.UserJSONBinding:
+    properties:
+      first_name:
+        type: string
+      last_name:
+        type: string
+      password:
+        description: Include the password field for binding
+        type: string
+      user_name:
+        type: string
+    required:
+    - password
+    - user_name
+    type: object
+info:
+  contact: {}
+paths:
+  /login:
+    post:
+      consumes:
+      - application/json
+      description: Authenticates a user based on the provided credentials (username
+        and password) and return a JWT token upon successful authentication.
+      parameters:
+      - description: Login request payload
+        in: body
+        name: body
+        required: true
+        schema:
+          $ref: '#/definitions/helpers.LoginRequest'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: User successfully authenticated
+          schema:
+            type: string
+        "400":
+          description: Invalid request payload
+          schema:
+            type: string
+        "401":
+          description: Invalid credentials
+          schema:
+            type: string
+        "500":
+          description: Internal Server Error
+          schema:
+            type: string
+      summary: Authenticates a user and return a JWT token
+      tags:
+      - Authentication
+  /rest_password:
+    post:
+      consumes:
+      - application/json
+      description: Reset the password for a user.
+      parameters:
+      - description: Request payload for password reset
+        in: body
+        name: requestPayload
+        required: true
+        schema:
+          $ref: '#/definitions/helpers.ResetPasswordPlatload'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: Password reset successful
+          schema:
+            type: string
+        "400":
+          description: Invalid request payload
+          schema:
+            type: string
+        "401":
+          description: Invalid credentials
+          schema:
+            type: string
+        "500":
+          description: Internal Server Error
+          schema:
+            type: string
+      summary: Reset user's password
+      tags:
+      - Reset password
+  /signup:
+    post:
+      consumes:
+      - application/json
+      description: Register a new user with the provided credentials and return a
+        JWT token upon successful registering.
+      parameters:
+      - description: User registration details in JSON format
+        in: body
+        name: body
+        required: true
+        schema:
+          $ref: '#/definitions/helpers.UserJSONBinding'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: User registered successfully
+          schema:
+            type: string
+        "400":
+          description: Bad Request - Invalid request payload
+          schema:
+            type: string
+        "500":
+          description: Internal Server Error
+          schema:
+            type: string
+      summary: Register a new user and return a JWT token
+      tags:
+      - Registering
+swagger: "2.0"
