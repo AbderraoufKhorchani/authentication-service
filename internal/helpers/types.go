@@ -8,8 +8,7 @@ type LoginRequest struct {
 }
 
 type Models struct {
-	User            User
-	UserJSONBinding UserJSONBinding
+	User User
 }
 
 // User is the structure which holds one user from the database.
@@ -21,14 +20,14 @@ type User struct {
 	Password  string `json:"-"`
 }
 
-type UserJSONBinding struct {
+type SignupRequest struct {
 	UserName  string `json:"user_name" binding:"required"`
 	FirstName string `json:"first_name,omitempty"`
 	LastName  string `json:"last_name,omitempty"`
 	Password  string `json:"password"  binding:"required"` // Include the password field for binding
 }
 
-type ResetPasswordPlatload struct {
+type ResetPasswordRequest struct {
 	UserName    string `json:"user_name" binding:"required"`
 	Password    string `json:"password" binding:"required"`
 	NewPassword string `json:"new_password" binding:"required"`

@@ -87,7 +87,7 @@ const docTemplate = `{
                         "in": "body",
                         "required": true,
                         "schema": {
-                            "$ref": "#/definitions/helpers.ResetPasswordPlatload"
+                            "$ref": "#/definitions/helpers.ResetPasswordRequest"
                         }
                     }
                 ],
@@ -139,7 +139,7 @@ const docTemplate = `{
                         "in": "body",
                         "required": true,
                         "schema": {
-                            "$ref": "#/definitions/helpers.UserJSONBinding"
+                            "$ref": "#/definitions/helpers.SignupRequest"
                         }
                     }
                 ],
@@ -182,7 +182,7 @@ const docTemplate = `{
                 }
             }
         },
-        "helpers.ResetPasswordPlatload": {
+        "helpers.ResetPasswordRequest": {
             "type": "object",
             "required": [
                 "new_password",
@@ -201,7 +201,7 @@ const docTemplate = `{
                 }
             }
         },
-        "helpers.UserJSONBinding": {
+        "helpers.SignupRequest": {
             "type": "object",
             "required": [
                 "password",

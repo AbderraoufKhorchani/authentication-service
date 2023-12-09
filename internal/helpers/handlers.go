@@ -12,14 +12,14 @@ import (
 // @Accept json
 // @Produce json
 // @Tags Registering
-// @Param body body UserJSONBinding true "User registration details in JSON format"
+// @Param body body SignupRequest true "User registration details in JSON format"
 // @Success 200 {string} string "User registered successfully"
 // @Failure 400 {string} string "Bad Request - Invalid request payload"
 // @Failure 500 {string} string "Internal Server Error"
 // @Router /signup [post]
 func Register(c *gin.Context) {
 
-	userJSON := UserJSONBinding{}
+	userJSON := SignupRequest{}
 
 	if err := c.ShouldBindJSON(&userJSON); err != nil {
 		c.JSON(http.StatusBadRequest, "Bad Request - Invalid request payload")
@@ -104,7 +104,7 @@ func Login(c *gin.Context) {
 // @Tags Reset password
 // @Accept json
 // @Produce json
-// @Param requestPayload body ResetPasswordPlatload true "Request payload for password reset"
+// @Param requestPayload body ResetPasswordRequest true "Request payload for password reset"
 // @Success 200 {string} string "Password reset successful"
 // @Failure 400 {string} string "Invalid request payload"
 // @Failure 401 {string} string "Invalid credentials"
@@ -112,7 +112,7 @@ func Login(c *gin.Context) {
 // @Router /rest_password [post]
 func ResetPassword(c *gin.Context) {
 
-	requestPayload := ResetPasswordPlatload{}
+	requestPayload := ResetPasswordRequest{}
 
 	if err := c.ShouldBindJSON(&requestPayload); err != nil {
 		c.JSON(http.StatusBadRequest, "Invalid request payload")

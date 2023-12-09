@@ -76,7 +76,7 @@
                         "in": "body",
                         "required": true,
                         "schema": {
-                            "$ref": "#/definitions/helpers.ResetPasswordPlatload"
+                            "$ref": "#/definitions/helpers.ResetPasswordRequest"
                         }
                     }
                 ],
@@ -128,7 +128,7 @@
                         "in": "body",
                         "required": true,
                         "schema": {
-                            "$ref": "#/definitions/helpers.UserJSONBinding"
+                            "$ref": "#/definitions/helpers.SignupRequest"
                         }
                     }
                 ],
@@ -171,7 +171,7 @@
                 }
             }
         },
-        "helpers.ResetPasswordPlatload": {
+        "helpers.ResetPasswordRequest": {
             "type": "object",
             "required": [
                 "new_password",
@@ -190,7 +190,7 @@
                 }
             }
         },
-        "helpers.UserJSONBinding": {
+        "helpers.SignupRequest": {
             "type": "object",
             "required": [
                 "password",

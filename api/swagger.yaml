@@ -9,7 +9,7 @@ definitions:
     - password
     - user_name
     type: object
-  helpers.ResetPasswordPlatload:
+  helpers.ResetPasswordRequest:
     properties:
       new_password:
         type: string
@@ -22,7 +22,7 @@ definitions:
     - password
     - user_name
     type: object
-  helpers.UserJSONBinding:
+  helpers.SignupRequest:
     properties:
       first_name:
         type: string
@@ -86,7 +86,7 @@ paths:
         name: requestPayload
         required: true
         schema:
-          $ref: '#/definitions/helpers.ResetPasswordPlatload'
+          $ref: '#/definitions/helpers.ResetPasswordRequest'
       produces:
       - application/json
       responses:
@@ -121,7 +121,7 @@ paths:
         name: body
         required: true
         schema:
-          $ref: '#/definitions/helpers.UserJSONBinding'
+          $ref: '#/definitions/helpers.SignupRequest'
       produces:
       - application/json
       responses:
