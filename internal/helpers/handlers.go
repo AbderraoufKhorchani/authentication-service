@@ -109,7 +109,7 @@ func Login(c *gin.Context) {
 // @Failure 400 {string} string "Invalid request payload"
 // @Failure 401 {string} string "Invalid credentials"
 // @Failure 500 {string} string "Internal Server Error"
-// @Router /rest_password [post]
+// @Router /reset_password [post]
 func ResetPassword(c *gin.Context) {
 
 	requestPayload := ResetPasswordRequest{}

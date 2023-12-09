@@ -67,7 +67,7 @@ const docTemplate = `{
                 }
             }
         },
-        "/rest_password": {
+        "/reset_password": {
             "post": {
                 "description": "Reset the password for a user.",
                 "consumes": [

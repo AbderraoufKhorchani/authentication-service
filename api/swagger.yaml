@@ -75,7 +75,7 @@ paths:
       summary: Authenticates a user and return a JWT token
       tags:
       - Authentication
-  /rest_password:
+  /reset_password:
     post:
       consumes:
       - application/json

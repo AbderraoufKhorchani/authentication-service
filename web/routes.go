@@ -27,6 +27,6 @@ func Routes() *gin.Engine {
 
 	r.POST("signup", helpers.Register)
 	r.POST("login", helpers.Login)
-	r.POST("rest_password", helpers.ResetPassword)
+	r.POST("reset_password", helpers.ResetPassword)
 	return r
 }
