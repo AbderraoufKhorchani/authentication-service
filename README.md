@@ -34,6 +34,10 @@ To run this authentication service, ensure you have the following prerequisites 
 
 Configure the service by setting up the PostgreSQL connection details by editing the DSN in the main.go file.
 
+4. Run project
+```go
+   go run ./cmd
+```
 
 
 ## Usage
