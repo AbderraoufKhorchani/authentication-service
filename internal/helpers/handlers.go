@@ -99,6 +99,7 @@ func Login(c *gin.Context) {
 
 }
 
+// Reset the password godoc
 // @Summary Reset user's password
 // @Description Reset the password for a user.
 // @Tags Reset password

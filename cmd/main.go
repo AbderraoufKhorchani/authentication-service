@@ -4,17 +4,18 @@ import (
 	"fmt"
 	"log"
 	"net/http"
-	"os"
 	"time"
 
 	"github.com/AbderraoufKhorchani/authentification-service/internal/helpers"
 	"github.com/AbderraoufKhorchani/authentification-service/web"
-	"github.com/joho/godotenv"
 	"gorm.io/driver/postgres"
 	"gorm.io/gorm"
 )
 
-const webPort = "8080"
+const (
+	webPort = "8080"
+	dsn     = "host=localhost port=5432 user=postgres password=password dbname=users sslmode=disable timezone=UTC connect_timeout=5"
+)
 
 var counts int64
 
@@ -39,11 +40,6 @@ func main() {
 	}
 }
 func connectToDB() *gorm.DB {
-	if err := godotenv.Load(); err != nil {
-		log.Println("Can't load DSN")
-	}
-
-	dsn := os.Getenv("DSN")
 
 	for {
 		connection, err := gorm.Open(postgres.Open(dsn), &gorm.Config{})
