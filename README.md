@@ -55,4 +55,4 @@ curl -X POST http://localhost:8080/reset_password -d '{"user_name": "exampleuser
 For more detailed information, refer to the [API Documentation](#api-doc) section.
 ## API Documentation<a id="api-doc"></a>
 
-The API is thoroughly documented using Swagger annotations. Access the Swagger UI at [http://localhost:8080/swagger/index.html](http://localhost:8080/swagger/index.html) to explore and interact with the API.
+The API is thoroughly documented using Swagger annotations. Access the Swagger UI at [http://localhost:8080/docs/index.html](http://localhost:8080/docs/index.html) to explore and interact with the API.

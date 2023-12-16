@@ -1,7 +1,7 @@
 package web
 
 import (
-	_ "github.com/AbderraoufKhorchani/authentification-service/api"
+	_ "github.com/AbderraoufKhorchani/authentification-service/docs"
 	"github.com/AbderraoufKhorchani/authentification-service/internal/helpers"
 	"github.com/gin-contrib/cors"
 	"github.com/gin-gonic/gin"
